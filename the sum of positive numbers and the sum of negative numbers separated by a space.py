@@ -1,26 +1,17 @@
-#include <stdio.h>
+# Read the input
+N = int(input())
+values = list(map(int, input().split()))
 
-int main() {
-    int N;
-    printf("Enter number of total number you want to enter: ");
-    scanf("%d", &N);
+# Initialize variables to store the sums of positive and negative numbers
+sum_positive = 0
+sum_negative = 0
 
-    int values[N];
-    int sum_positive = 0;
-    int sum_negative = 0;
-    
-    printf("Enter your number in integer: ");
-    
-    for (int i = 0; i < N; i++) {
-        scanf("%d", &values[i]);
-            if (values[i] > 0) {
-                sum_positive += values[i];
-            } else if (values[i] < 0) {
-                sum_negative += values[i];
-        }
-    }
+# Iterate through the list of values and update the sums
+for value in values:
+    if value > 0:
+        sum_positive += value
+    elif value < 0:
+        sum_negative += value
 
-    printf("The sum of positive number is: %d \nThe sum of negative number is: %d\n", sum_positive, sum_negative);
-
-    return 0;
-}
+# Output the sums in the required format
+print(sum_positive, sum_negative)
